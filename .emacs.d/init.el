@@ -1,5 +1,4 @@
 ;; general stuff
-(ido-mode)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
@@ -21,6 +20,12 @@
 ;; workaround-/fix-config
 (setq package-install-upgrade-built-in t)
 
+;; ido-mode-config
+;; (use-package ido-completing-read+)
+(ido-mode 1)
+(ido-everywhere 1)
+;; (ido-ubiquitous-mode 1)
+
 ;; smex-config
 (use-package smex)
 (global-set-key (kbd "M-x") 'smex)
@@ -41,6 +46,21 @@
 (use-package kaolin-themes)
 (use-package cherry-blossom-theme)
 (use-package moe-theme)
+(load-theme 'gruber-darker)
 
 ;; custom-keybindings-config
 (global-set-key (kbd "C-c c") 'copy-region-as-kill)
+
+(defun duplicate-line ()
+  "Duplicates the line, point is currently on."
+  (interactive)
+  (move-beginning-of-line 0)
+  (set-mark-command 0)
+  (move-end-of-line 0)
+  (copy-region-as-kill 0)
+  (newline)
+  (yank))
+(global-set-key (kbd "C-c ,") 'duplicate-line)
+
+;; mode-bar
+;; (mode-ba

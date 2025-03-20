@@ -26,3 +26,12 @@ Schreibtisch/
 .emacs.d/tutorial
 .emacs.d/transient
 *~
+/.appimages/
+/.deno/
+/.emacs.d/smex-items
+/.gitconfig
+/.java/
+/.pki/
+/.sonarlint/
+/.wget-hsts
+/opt/
